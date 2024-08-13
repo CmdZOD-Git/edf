@@ -1,5 +1,7 @@
 extends Node2D
 
+const MAX_ENEMY:int = 200
+
 @onready var main = get_tree().root.get_node("Main")
 var enemy_spawn_timer:Timer
 
@@ -27,15 +29,15 @@ func _ready() -> void:
 	
 	# spawn test_gun
 	var test_gun:Item = preload("res://item_template.tscn").instantiate()
-	test_gun.item_resource = load("res://test_gun_itemresource.tres")
+	test_gun.item_resource = load("res://pistol_gun_itemresource.tres")
 	player.item_manager.add_child(test_gun)
 	
 	# spawn enemies
-	for i in range(10):
+	for i in range(MAX_ENEMY):
 		spawn_enemy()
 		
 func spawn_enemy() -> void:
-	if get_tree().root.get_node("Main").get_child_count() > 100:
+	if get_tree().root.get_node("Main").get_child_count() >= MAX_ENEMY:
 		return
 	
 	var enemy_spawn:Actor = preload("res://actor_template.tscn").instantiate()

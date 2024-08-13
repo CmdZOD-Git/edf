@@ -9,11 +9,13 @@ enum Motion {
 	melee,
 }
 
+@export var title:String = "default gun"
 @export var area_size:float
 @export var cooldown_second:float
 @export var type:Type
 @export var texture:Texture2D
 @export var damage:float
+@export var speed:float
 @export var spray_degree:float = 0
 @export var draw_range:bool
 @export var piercing:int = 1

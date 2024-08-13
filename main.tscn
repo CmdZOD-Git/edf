@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://4ocoqagpfapl" path="res://tileset/city_tileset.tres" id="1_t2brp"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 texture_filter = 1
 
 [node name="TestSetup" type="Node2D" parent="."]

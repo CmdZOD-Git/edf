@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4npkasg0ktvj"]
 
 [ext_resource type="Script" path="res://item_class.gd" id="1_kdiuv"]
-[ext_resource type="Resource" uid="uid://csrvcosomvbek" path="res://test_gun_itemresource.tres" id="2_ubbg8"]
+[ext_resource type="Resource" uid="uid://csrvcosomvbek" path="res://pistol_gun_itemresource.tres" id="2_ubbg8"]
 
 [node name="RegularGun" type="Node2D"]
 script = ExtResource("1_kdiuv")

@@ -33,21 +33,25 @@ func _ready() -> void:
 	
 	# Collision and mask
 	if actor_stat.is_player == true:
+		set_collision_layer_value(1,true)
 		set_collision_layer_value(2,true)
+		set_collision_layer_value(3,false)
+		
 		set_collision_mask_value(1,true)
+		set_collision_mask_value(2,false)
 		set_collision_mask_value(3,true)
 	else:
+		set_collision_layer_value(1,false)
+		set_collision_layer_value(2,false)
 		set_collision_layer_value(3,true)
 		
-		set_collision_mask_value(1,true)
+		set_collision_mask_value(1,false) # that's the big hack, remove enemy collision woth terrain for FPS sake
 		set_collision_mask_value(2,true)
+		set_collision_mask_value(3,false)
 	
-	# Spritefrale
+	# Spriteframe
 		animation_manager.sprite_frames = actor_stat.sprite_frame
 		
-	# Count
-		text_box.text = str(get_tree().root.get_node("Main").get_child_count())
-	
 func _physics_process(_delta: float) -> void:
 	if not control_manager or not control_manager.direction:
 		direction = Vector2.ZERO
@@ -60,6 +64,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
+	#global_position += velocity
 
 func on_radio(data) -> void:
 	match data.type:
@@ -76,10 +81,12 @@ func text_toast(text:String) -> void:
 	label.text = text
 	label.position.y = -15
 	label.add_theme_font_size_override("font_size", 8 )
-	tween.set_parallel()
+	tween.set_parallel(true)
 	tween.tween_property( label , "position:y", -40 , 1 )
 	tween.tween_property( label , "self_modulate:a", 0 , 1 )
+	tween.set_parallel(false)
 	tween.tween_callback(label.queue_free)
+	label.z_index = 10
 	add_child(label)
 	#await get_tree().create_timer(1).timeout
 	#label.queue_free()

@@ -40,3 +40,8 @@ debug_color = Color(0, 0.6, 0, 0.0980392)
 
 [node name="ControlManager" type="Node2D" parent="."]
 script = ExtResource("9_ed3e3")
+
+[node name="TextBox" type="Label" parent="."]
+offset_right = 32.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 8

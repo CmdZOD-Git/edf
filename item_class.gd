@@ -76,6 +76,7 @@ func fire_projectile() -> void:
 	projectile.item_owner = actor
 	projectile.shooting_item = self
 	projectile.damage = item_resource.damage
+	projectile.speed = item_resource.speed
 	projectile.texture = item_resource.texture
 	projectile.current_position = global_position
 	projectile.direction = global_position.direction_to(selected_target.global_position)
