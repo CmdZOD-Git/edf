@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActorStat" load_steps=3 format=3 uid="uid://7uxxw54tre4t"]
+
+[ext_resource type="Script" path="res://actor_stat.gd" id="1_vjj8x"]
+[ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="2_ua85a"]
+
+[resource]
+script = ExtResource("1_vjj8x")
+is_player = true
+terrain_collide = true
+can_grab = false
+speed = 75.0
+max_hitpoint = 10.0
+sprite_frame = ExtResource("2_ua85a")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActorStat" load_steps=3 format=3 uid="uid://dumbtho6ayvqg"]
+
+[ext_resource type="Script" path="res://actor_stat.gd" id="1_1x4xp"]
+[ext_resource type="SpriteFrames" uid="uid://x5imn8va81c" path="res://SpriteFrame/scarab_spriteframe.tres" id="2_gcg8l"]
+
+[resource]
+script = ExtResource("1_1x4xp")
+is_player = false
+terrain_collide = true
+can_grab = false
+speed = 10.0
+max_hitpoint = 100.0
+sprite_frame = ExtResource("2_gcg8l")

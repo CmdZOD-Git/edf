@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://csrvcosomvbek"]
+
+[ext_resource type="Script" path="res://item_resource.gd" id="1_22j1q"]
+[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_txhn6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67r6q"]
+atlas = ExtResource("2_txhn6")
+region = Rect2(0, 0, 8, 8)
+
+[resource]
+script = ExtResource("1_22j1q")
+area_size = 80.0
+cooldown_second = 0.25
+type = 0
+texture = SubResource("AtlasTexture_67r6q")
+damage = 3.0
+spray_degree = 10.0
+draw_range = true
+piercing = 1
+motion = 0

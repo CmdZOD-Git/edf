@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxkwh340yug83"]
+
+[ext_resource type="Script" path="res://actor_class.gd" id="1_0wp1f"]
+[ext_resource type="Script" path="res://actor_stat.gd" id="2_rsrfn"]
+[ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="3_1btsu"]
+[ext_resource type="Script" path="res://animation_manager.gd" id="4_qpr1k"]
+[ext_resource type="Script" path="res://controller.gd" id="5_bjwkw"]
+
+[sub_resource type="Resource" id="Resource_04dm4"]
+script = ExtResource("2_rsrfn")
+is_player = false
+terrain_collide = true
+can_grab = false
+speed = 25.0
+max_hitpoint = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8en8"]
+size = Vector2(13, 7)
+
+[node name="Actor" type="CharacterBody2D"]
+collision_layer = 0
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_0wp1f")
+actor_stat = SubResource("Resource_04dm4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_repeat = 1
+position = Vector2(0, -3)
+sprite_frames = ExtResource("3_1btsu")
+animation = &"stun_loop"
+script = ExtResource("4_qpr1k")
+
+[node name="ItemManager" type="Node2D" parent="."]
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t8en8")
+debug_color = Color(0, 0.6, 0, 0.0980392)
+
+[node name="ControlManager" type="Node2D" parent="."]
+script = ExtResource("5_bjwkw")
+
+[node name="TextBox" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10

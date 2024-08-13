@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbrcqhp5wgsrg"]
+
+[ext_resource type="SpriteFrames" uid="uid://d3qspkyf4k5s" path="res://SpriteFrame/impact.tres" id="1_kmyrm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_kmyrm")
+animation = &"big_fragment"
+frame = 5
+frame_progress = 1.0

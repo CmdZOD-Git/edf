@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8e0nmss630g"]
+
+[ext_resource type="Script" path="res://projectile_class.gd" id="1_taor6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sq81"]
+radius = 5.0
+
+[sub_resource type="Gradient" id="Gradient_e5b7m"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1yd6v"]
+gradient = SubResource("Gradient_e5b7m")
+width = 8
+height = 8
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_taor6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8sq81")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_1yd6v")

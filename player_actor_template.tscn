@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://nldquq1oijfy"]
+
+[ext_resource type="Script" path="res://actor_class.gd" id="1_hvjtv"]
+[ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="2_e32l7"]
+[ext_resource type="Script" path="res://animation_manager.gd" id="3_c7e2f"]
+[ext_resource type="PackedScene" uid="uid://d4npkasg0ktvj" path="res://item_template.tscn" id="4_55seo"]
+[ext_resource type="Script" path="res://debug_box.gd" id="8_f4iyb"]
+[ext_resource type="Script" path="res://controller.gd" id="9_fksw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r4jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2l3"]
+size = Vector2(13, 7)
+
+[node name="PlayerActor" type="CharacterBody2D"]
+position = Vector2(248, 112)
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_hvjtv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_repeat = 1
+position = Vector2(0, -3)
+sprite_frames = ExtResource("2_e32l7")
+animation = &"idle"
+script = ExtResource("3_c7e2f")
+
+[node name="GrabRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Area2D" type="CollisionShape2D" parent="GrabRadius"]
+shape = SubResource("CircleShape2D_3r4jg")
+debug_color = Color(0, 0.6, 0.701961, 0.211765)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="ItemManager" type="Node2D" parent="."]
+
+[node name="RegularGun" parent="ItemManager" instance=ExtResource("4_55seo")]
+
+[node name="DebugTextBox" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -152.0
+offset_top = -80.0
+offset_right = -112.0
+offset_bottom = -57.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 8
+script = ExtResource("8_f4iyb")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jk2l3")
+debug_color = Color(0, 0.6, 0, 0.0980392)
+
+[node name="ControlManager" type="Node2D" parent="."]
+script = ExtResource("9_fksw4")
