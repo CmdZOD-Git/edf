@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAX_ENEMY:int = 200
+const MAX_ENEMY:int = 100
 
 @onready var main = get_tree().root.get_node("Main")
 var enemy_spawn_timer:Timer
@@ -42,7 +42,7 @@ func spawn_enemy() -> void:
 	
 	var enemy_spawn:Actor = preload("res://actor_template.tscn").instantiate()
 	enemy_spawn.actor_stat = load("res://ActorStat/scarab_lv1.tres").duplicate()
-	var randx:int = randi_range( 10, 300 )
-	var randy:int = randi_range( 10, 300 )
+	var randx:int = randi_range( 10, 600 )
+	var randy:int = randi_range( 10, 450 )
 	main.add_child(enemy_spawn)
 	enemy_spawn.global_position = Vector2( randx , randy )
