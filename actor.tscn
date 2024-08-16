@@ -13,6 +13,7 @@ terrain_collide = true
 can_grab = false
 speed = 25.0
 max_hitpoint = 10.0
+current_hitpoint = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk2l3"]
 size = Vector2(13, 7)

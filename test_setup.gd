@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 	# spawn test_gun
 	var test_gun:Item = preload("res://item_template.tscn").instantiate()
-	test_gun.item_resource = load("res://pistol_gun_itemresource.tres")
+	test_gun.item_resource = load("res://pistol_gun_itemresource.tres").duplicate()
 	player.item_manager.add_child(test_gun)
 	
 	# spawn enemies

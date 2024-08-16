@@ -1,5 +1,4 @@
 # Now
-Hit Spark
 Enemy melee attack & melee attack logic
 Spawner framework 
 Upgrade framework
@@ -13,3 +12,6 @@ Gameplay, for real ?
 
 # DONE
 Item motion enum
+Optimisation - no nav on enemy and area to find player is not monitorable
+Hit point current -> now set at actor node ready
+Hit Spark

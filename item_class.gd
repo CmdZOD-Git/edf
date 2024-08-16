@@ -80,6 +80,11 @@ func fire_projectile() -> void:
 	projectile.texture = item_resource.texture
 	projectile.current_position = global_position
 	projectile.direction = global_position.direction_to(selected_target.global_position)
+	
+	projectile.impact = item_resource.impact
+	projectile.impact_random = item_resource.impact_random
+	projectile.impact_random_framecount = item_resource.impact_random_framecount
+	
 	var applied_spray:float = randf_range( - item_resource.spray_degree , item_resource.spray_degree)
 	projectile.direction = projectile.direction.rotated( deg_to_rad( applied_spray ) )
 	add_child(projectile)

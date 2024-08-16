@@ -1,6 +1,6 @@
 class_name Actor extends CharacterBody2D
 
-@export var actor_stat:ActorStat = ActorStat.new()
+@export var actor_stat:ActorStat
 @onready var control_manager = $ControlManager
 @onready var collision_box:CollisionShape2D = $CollisionBox
 @onready var animation_manager:AnimatedSprite2D = $AnimatedSprite2D
@@ -13,6 +13,7 @@ signal actor_radio(data:Dictionary)
 signal projectile_hit(projectile)
 
 func _ready() -> void:
+	actor_stat.current_hitpoint = actor_stat.max_hitpoint
 	
 	projectile_hit.connect(on_hit)
 	actor_radio.connect(on_radio)
@@ -52,7 +53,7 @@ func _ready() -> void:
 	# Spriteframe
 		animation_manager.sprite_frames = actor_stat.sprite_frame
 		
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not control_manager or not control_manager.direction:
 		direction = Vector2.ZERO
 	else:
@@ -62,9 +63,9 @@ func _physics_process(_delta: float) -> void:
 		velocity = direction * actor_stat.speed
 	else:
 		velocity = Vector2.ZERO
-
+	
+	velocity = velocity
 	move_and_slide()
-	#global_position += velocity
 
 func on_radio(data) -> void:
 	match data.type:
@@ -93,7 +94,8 @@ func text_toast(text:String) -> void:
 
 func take_damage(damage:float) -> void:
 	actor_stat.current_hitpoint -= damage
-	if actor_stat.current_hitpoint < 0:
+	print("hitto")
+	if actor_stat.current_hitpoint <= 0:
 		text_toast("I die !")
 		actor_radio.emit({"type" : "status" , "status" : "dead" })
 	else:

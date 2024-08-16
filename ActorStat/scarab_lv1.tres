@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("1_1x4xp")
 is_player = false
-terrain_collide = true
+terrain_collide = false
 can_grab = false
 speed = 10.0
-max_hitpoint = 100.0
+max_hitpoint = 3.0
+current_hitpoint = 0.0
 sprite_frame = ExtResource("2_gcg8l")

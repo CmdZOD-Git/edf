@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://crfdotsf0sg07"]
+
+[ext_resource type="Script" path="res://doodad.gd" id="1_ugj66"]
+[ext_resource type="SpriteFrames" uid="uid://d3qspkyf4k5s" path="res://SpriteFrame/impact.tres" id="2_l883d"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("2_l883d")
+animation = &"bullet_impact"
+script = ExtResource("1_ugj66")

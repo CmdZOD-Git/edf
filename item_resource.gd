@@ -20,3 +20,6 @@ enum Motion {
 @export var draw_range:bool
 @export var piercing:int = 1
 @export var motion:Motion = Motion.fire
+@export var impact:Doodad.DoodadList
+@export var impact_random:bool = false
+@export var impact_random_framecount:int
