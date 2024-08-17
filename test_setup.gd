@@ -27,11 +27,12 @@ func _ready() -> void:
 	main.add_child(player)
 	player.global_position = Vector2(200,128)
 	
-	# spawn test_item
-	#var test_item:Item = preload("res://Item/item_template.tscn").instantiate()
-	#test_item.item_resource = load("res://Item/pistol_gun_itemresource.tres").duplicate()
-	#player.item_manager.add_child(test_item)
+	 # spawn test_item pistol
+	var test_item:Item = preload("res://Item/item_template.tscn").instantiate()
+	test_item.item_resource = load("res://Item/pistol_gun_itemresource.tres").duplicate()
+	player.item_manager.add_child(test_item)
 	
+	# spawn test_item melee
 	var test_item_2:Item = preload("res://Item/item_template.tscn").instantiate()
 	test_item_2.item_resource = load("res://Item/melee_strike.tres").duplicate()
 	player.item_manager.add_child(test_item_2)

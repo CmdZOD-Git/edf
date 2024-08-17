@@ -158,10 +158,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_msn3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msn3g")
 }],
 "loop": false,
 "name": &"melee",
-"speed": 4.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

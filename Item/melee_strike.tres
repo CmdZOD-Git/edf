@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://miwvysulv1ah"]
 
 [ext_resource type="Script" path="res://item_resource.gd" id="1_m7uvj"]
-[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_pueau"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_67r6q"]
-atlas = ExtResource("2_pueau")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ad27d"]
+load_path = "res://.godot/imported/bullets&plasma.png-16984755a953f412ed7cbf99f3165bf7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gahr"]
+atlas = SubResource("CompressedTexture2D_ad27d")
 region = Rect2(16, 0, 8, 8)
 
 [resource]
@@ -12,16 +14,17 @@ script = ExtResource("1_m7uvj")
 title = "Melee Strike"
 type = 0
 hit_box_type = 1
-motion = 1
-area_size = 30.0
-draw_range = true
 cooldown_second = 2.0
 damage = 5.0
 number_of_hit = 99
-texture = SubResource("AtlasTexture_67r6q")
+texture = SubResource("AtlasTexture_1gahr")
 hit_radius = 10.0
 hit_lifespan = 0.1
-melee_area_size = 50.0
+area_size = 20.0
+draw_range = true
+draw_range_color = Color(0.0403896, 0.524483, 1, 1)
+motion = 1
+priority = 6
 speed = 0.0
 spray_degree = 0.0
 impact = 1

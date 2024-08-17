@@ -30,7 +30,7 @@ func _ready() -> void:
 		if item_resource.draw_range:
 			draw_range_sprite = Sprite2D.new()
 			draw_range_sprite.texture = preload("res://circle_area_texture.tres")
-			draw_range_sprite.self_modulate = Color("RED", 0.1)
+			draw_range_sprite.self_modulate = Color( item_resource.draw_range_color , 0.1 )
 			draw_range_sprite.scale = Vector2(  2 * item_resource.area_size / 100 , 2 * item_resource.area_size / 100 )
 			add_child(draw_range_sprite)
 	
@@ -100,27 +100,5 @@ func fire_projectile(target, from ) -> void:
 	projectile.direction = projectile.direction.rotated( deg_to_rad( applied_spray ) )
 	add_child(projectile)
 
-	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : 5 } )
-	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })
-
-func fire_area(target) -> void:
-	#var attack_area:Area2D = Area2D.new()
-	#var shape:CollisionShape2D = CollisionShape2D.new()
-	#var circle:CircleShape2D = CircleShape2D.new()
-	#add_child(attack_area)
-	#attack_area.add_child(shape)
-	#shape.shape = circle
-	#
-	#attack_area.set_monitorable(false)
-	#shape.debug_color = Color("GREEN", 0.10)
-	#circle.radius = item_resource.melee_area_size
-	#
-	#attack_area.set_collision_mask_value(1,false) # By default, only check enemy layer
-	#attack_area.set_collision_mask_value(2,false) # By default, only check enemy layer
-	#attack_area.set_collision_mask_value(3,true) # By default, only check enemy layer
-	#
-	#
-	#attack_area.get_overlapping_bodies()
-	
-	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : 5 } )
+	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : item_resource.priority } )
 	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })
