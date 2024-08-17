@@ -123,9 +123,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aykrp")
 }],
-"loop": true,
+"loop": false,
 "name": &"melee",
-"speed": 4.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,

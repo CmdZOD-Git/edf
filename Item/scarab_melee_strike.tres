@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://vjmnit46e1ji"]
+
+[ext_resource type="Script" path="res://item_resource.gd" id="1_1whmg"]
+[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_4jp2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx7ht"]
+atlas = ExtResource("2_4jp2u")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+script = ExtResource("1_1whmg")
+title = "Bite"
+type = 0
+hit_box_type = 1
+cooldown_second = 1.0
+damage = 1.0
+number_of_hit = 99
+texture = SubResource("AtlasTexture_dx7ht")
+hit_radius = 1.0
+hit_lifespan = 0.1
+area_size = 10.0
+draw_range = true
+draw_range_color = Color(0.947406, 2.91191e-06, 3.85046e-07, 1)
+motion = 1
+priority = 6
+speed = 0.0
+spray_degree = 0.0
+impact = 1
+impact_random = true
+impact_random_framecount = 1

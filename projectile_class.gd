@@ -26,7 +26,7 @@ var impact:Doodad.DoodadList
 var impact_random:bool
 var impact_random_framecount:int
 
-var item_owner:Node2D
+var item_owner:Actor
 var shooting_item:Node2D
 
 @onready var collision_area:CollisionShape2D = $CollisionShape2D
@@ -34,9 +34,14 @@ var shooting_item:Node2D
 func _ready() -> void:
 	global_position = current_position
 	hit_current = hit_max
-	set_collision_mask_value(3, true)
+	
 	area_entered.connect(on_area_entered)
 	body_entered.connect(on_body_entered)
+	
+	if item_owner.actor_stat.is_player == true:
+		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.TARGETTING_ENEMY)
+	else:
+		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.TARGETTING_PLAYER)
 	
 	life_span_timer = Timer.new()
 	life_span_timer.one_shot = true

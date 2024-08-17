@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://actor_class.gd" id="1_dno6h"]
 [ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="2_vxf1t"]
 [ext_resource type="Script" path="res://animation_manager.gd" id="3_x8id0"]
-[ext_resource type="Script" path="res://actor_stat.gd" id="7_2w13u"]
+[ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="7_2w13u"]
 [ext_resource type="Script" path="res://controller.gd" id="9_ed3e3"]
 
 [sub_resource type="Resource" id="Resource_04dm4"]

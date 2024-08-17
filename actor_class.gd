@@ -34,21 +34,9 @@ func _ready() -> void:
 	
 	# Collision and mask
 	if actor_stat.is_player == true:
-		set_collision_layer_value(1,true)
-		set_collision_layer_value(2,true)
-		set_collision_layer_value(3,false)
-		
-		set_collision_mask_value(1,true)
-		set_collision_mask_value(2,false)
-		set_collision_mask_value(3,true)
+		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.PLAYER)
 	else:
-		set_collision_layer_value(1,false)
-		set_collision_layer_value(2,false)
-		set_collision_layer_value(3,true)
-		
-		set_collision_mask_value(1,false) # that's the big hack, remove enemy collision woth terrain for FPS sake
-		set_collision_mask_value(2,true)
-		set_collision_mask_value(3,false)
+		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.ENEMY)
 	
 	# Spriteframe
 		animation_manager.sprite_frames = actor_stat.sprite_frame
@@ -89,8 +77,6 @@ func text_toast(text:String) -> void:
 	tween.tween_callback(label.queue_free)
 	label.z_index = 10
 	add_child(label)
-	#await get_tree().create_timer(1).timeout
-	#label.queue_free()
 
 func take_damage(damage:float) -> void:
 	actor_stat.current_hitpoint -= damage

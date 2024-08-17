@@ -30,12 +30,12 @@ func _ready() -> void:
 	 # spawn test_item pistol
 	var test_item:Item = preload("res://Item/item_template.tscn").instantiate()
 	test_item.item_resource = load("res://Item/pistol_gun_itemresource.tres").duplicate()
-	player.item_manager.add_child(test_item)
+	#player.item_manager.add_child(test_item)
 	
 	# spawn test_item melee
 	var test_item_2:Item = preload("res://Item/item_template.tscn").instantiate()
 	test_item_2.item_resource = load("res://Item/melee_strike.tres").duplicate()
-	player.item_manager.add_child(test_item_2)
+	#player.item_manager.add_child(test_item_2)
 	
 	# spawn enemies
 	for i in range(MAX_ENEMY):
@@ -51,3 +51,8 @@ func spawn_enemy() -> void:
 	var randy:int = randi_range( 10, 450 )
 	main.add_child(enemy_spawn)
 	enemy_spawn.global_position = Vector2( randx , randy )
+	
+	 # Give enemy bite
+	var weapon_item:Item = preload("res://Item/item_template.tscn").instantiate()
+	weapon_item.item_resource = load("res://Item/scarab_melee_strike.tres").duplicate()
+	enemy_spawn.item_manager.add_child(weapon_item)

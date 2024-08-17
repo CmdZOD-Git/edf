@@ -1,7 +1,7 @@
 class_name Item extends Node2D
 
 @onready var item_manager = $".."
-@onready var actor = $"../.."
+@onready var actor:Actor = $"../.."
 
 @export var item_resource:ItemResource
 
@@ -9,7 +9,7 @@ var range_area:Area2D
 var draw_range_sprite:Sprite2D
 var cooldown_time:Timer
 var projectile:Projectile
-		
+
 func _ready() -> void:
 	# Setting up area for target search
 	if item_resource.area_size > 0:
@@ -19,10 +19,12 @@ func _ready() -> void:
 		add_child(range_area)
 		range_area.add_child(shape)
 		range_area.set_monitorable(false)
-		range_area.set_collision_layer_value(1, false)
-		range_area.set_collision_mask_value(1,false) # By default, only check enemy layer
-		range_area.set_collision_mask_value(2,false) # By default, only check enemy layer
-		range_area.set_collision_mask_value(3,true) # By default, only check enemy layer
+		
+		if actor.actor_stat.is_player == true:
+			CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_ENEMY)
+		else:
+			CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_PLAYER)
+
 		shape.shape = circle
 		shape.debug_color = Color("RED", 0.10)
 		circle.radius = item_resource.area_size
