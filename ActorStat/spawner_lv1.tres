@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://oqd118owcekd" path="res://Item/scarab_gun.tres" id="1_o8373"]
 [ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="1_rd46a"]
-[ext_resource type="PackedScene" uid="uid://lu6hu46yieb" path="res://Sprite/spawner_mound.tscn" id="2_d4jh5"]
+[ext_resource type="PackedScene" uid="uid://lu6hu46yieb" path="res://Scene/spawner_mound.tscn" id="2_d4jh5"]
 [ext_resource type="SpriteFrames" uid="uid://l4dyp1c2sgm4" path="res://SpriteFrame/empty_spriteframe.tres" id="2_u0tue"]
 
 [resource]

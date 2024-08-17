@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://lu6hu46yieb"]
+[gd_scene load_steps=12 format=3 uid="uid://lu6hu46yieb"]
 
-[ext_resource type="Texture2D" uid="uid://docmwjl0wxiyt" path="res://Sprite/Centipede.png" id="1_lw7ss"]
-[ext_resource type="Texture2D" uid="uid://dwvemo8817jsr" path="res://Sprite/Spider.png" id="2_lwkhr"]
+[ext_resource type="Texture2D" uid="uid://docmwjl0wxiyt" path="res://Sprite/Centipede.png" id="1_sk154"]
+[ext_resource type="Texture2D" uid="uid://dwvemo8817jsr" path="res://Sprite/Spider.png" id="2_85rc0"]
 
 [sub_resource type="Animation" id="Animation_30klu"]
 resource_name = "idle"
@@ -9,22 +9,31 @@ resource_name = "idle"
 [sub_resource type="Animation" id="Animation_2akdd"]
 resource_name = "die"
 
+[sub_resource type="Animation" id="Animation_ebn7e"]
+
+[sub_resource type="Animation" id="Animation_v026k"]
+
+[sub_resource type="Animation" id="Animation_mmf7h"]
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1vyek"]
 _data = {
-"die": SubResource("Animation_2akdd"),
-"idle": SubResource("Animation_30klu")
+"death": SubResource("Animation_2akdd"),
+"fire": SubResource("Animation_v026k"),
+"idle": SubResource("Animation_30klu"),
+"melee": SubResource("Animation_mmf7h"),
+"walk": SubResource("Animation_ebn7e")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gque"]
-atlas = ExtResource("1_lw7ss")
+atlas = ExtResource("1_sk154")
 region = Rect2(0, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unfaf"]
-atlas = ExtResource("1_lw7ss")
+atlas = ExtResource("1_sk154")
 region = Rect2(16, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_powuw"]
-atlas = ExtResource("2_lwkhr")
+atlas = ExtResource("2_85rc0")
 region = Rect2(0, 0, 16, 16)
 
 [node name="SceneBased" type="Node2D"]
