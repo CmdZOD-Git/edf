@@ -9,7 +9,7 @@ var range_area:Area2D
 var draw_range_sprite:Sprite2D
 var cooldown_time:Timer
 var projectile:Projectile
-
+		
 func _ready() -> void:
 	# Setting up area for target search
 	if item_resource.area_size > 0:
@@ -88,6 +88,9 @@ func fire_projectile(target, from ) -> void:
 	projectile.texture = item_resource.texture
 	projectile.current_position = from
 	projectile.direction = global_position.direction_to(target.global_position)
+	projectile.radius = item_resource.hit_radius
+	projectile.hit_max = item_resource.number_of_hit
+	projectile.life_span_second = item_resource.hit_lifespan
 	
 	projectile.impact = item_resource.impact
 	projectile.impact_random = item_resource.impact_random

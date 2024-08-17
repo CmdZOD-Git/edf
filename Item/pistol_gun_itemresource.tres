@@ -1,25 +1,29 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://csrvcosomvbek"]
 
-[ext_resource type="Script" path="res://item_resource.gd" id="1_sccov"]
-[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_pp8nt"]
+[ext_resource type="Script" path="res://item_resource.gd" id="1_rkr3x"]
+[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_0culo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67r6q"]
-atlas = ExtResource("2_pp8nt")
-region = Rect2(0, 0, 8, 8)
+atlas = ExtResource("2_0culo")
+region = Rect2(16, 0, 8, 8)
 
 [resource]
-script = ExtResource("1_sccov")
+script = ExtResource("1_rkr3x")
 title = "Pistol gun"
-area_size = 80.0
-cooldown_second = 0.5
 type = 0
-texture = SubResource("AtlasTexture_67r6q")
-damage = 1.0
-speed = 2.0
-spray_degree = 10.0
-draw_range = true
-piercing = 1
+hit_box_type = 0
 motion = 0
+area_size = 80.0
+draw_range = true
+cooldown_second = 0.5
+damage = 1.0
+number_of_hit = 1
+texture = SubResource("AtlasTexture_67r6q")
+hit_radius = 5.0
+hit_lifespan = 3.0
+melee_area_size = 0.0
+speed = 0.0
+spray_degree = 0.0
 impact = 2
 impact_random = true
 impact_random_framecount = 2
