@@ -1,4 +1,5 @@
 # Now
+Add item to actor stat and display of scene instead of spriteframe
 Spawner framework 
 Upgrade framework
 player death + health bar (beginning of an UI ?)

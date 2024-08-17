@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ActorStat" load_steps=3 format=3 uid="uid://dumbtho6ayvqg"]
+[gd_resource type="Resource" script_class="ActorStat" load_steps=4 format=3 uid="uid://dumbtho6ayvqg"]
 
 [ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="1_1x4xp"]
+[ext_resource type="Resource" uid="uid://oqd118owcekd" path="res://Item/scarab_gun.tres" id="1_whk3x"]
 [ext_resource type="SpriteFrames" uid="uid://x5imn8va81c" path="res://SpriteFrame/scarab_spriteframe.tres" id="2_gcg8l"]
 
 [resource]
@@ -11,4 +12,6 @@ can_grab = false
 speed = 10.0
 max_hitpoint = 3.0
 current_hitpoint = 0.0
+display_mode = 0
 sprite_frame = ExtResource("2_gcg8l")
+item_list = Array[Resource("res://item_resource.gd")]([ExtResource("1_whk3x")])

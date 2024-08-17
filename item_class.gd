@@ -73,9 +73,9 @@ func _ready() -> void:
 	# Initial target array setup
 	target_list = range_area.get_overlapping_bodies()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_primed == true and selected_target == null:
-		find_target()
+		select_closest_target()
 		
 	if is_primed == true and not selected_target == null:
 		if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
@@ -95,10 +95,9 @@ func on_cooldown_timeout() -> void:
 	
 func on_target_refresh_timeout() -> void:
 	if target_list.size() > 0:
-		find_target()
+		select_closest_target()
 
-func find_target() -> void:
-	var target_to_return:Node2D = null
+func select_closest_target() -> void:
 	var selected_target_distance:float
 	
 	# Find a target

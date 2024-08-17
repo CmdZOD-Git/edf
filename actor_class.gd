@@ -39,7 +39,19 @@ func _ready() -> void:
 		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.ENEMY)
 	
 	# Spriteframe
-		animation_manager.sprite_frames = actor_stat.sprite_frame
+	animation_manager.sprite_frames = actor_stat.sprite_frame
+	
+	# Scene display
+	if actor_stat.display_mode == actor_stat.DisplayMode.SCENE:
+		if actor_stat.scene_to_display:
+			var scene_to_add = actor_stat.scene_to_display.instantiate()
+			animation_manager.add_child(scene_to_add)
+		
+	# item
+	for item in actor_stat.item_list:
+		var item_to_add:Item = preload("res://Item/item_template.tscn").instantiate()
+		item_to_add.item_resource = item
+		item_manager.add_child(item_to_add)
 		
 func _physics_process(_delta: float) -> void:
 	
