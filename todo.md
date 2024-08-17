@@ -1,5 +1,5 @@
 # Now
-Add item to actor stat and display of scene instead of spriteframe
+Animation manager rework to support fully scene and animated sprite
 Spawner framework 
 Upgrade framework
 player death + health bar (beginning of an UI ?)
@@ -14,6 +14,7 @@ XP and level up ?
 # Idea
 
 # DONE (in reverse)
+Add item to actor stat and display of scene instead of spriteframe
 Decouple cooldown and target seek
 Enemy melee attack & melee attack logic -> Need team logic
 Melee attack logic (simple reskinning of fire projectile)
