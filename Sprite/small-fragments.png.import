@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ux3ep2a1tl4l"
-path="res://.godot/imported/hit-sparks.png-a76bfe6bcd408334037f59382d9c1f4e.ctex"
+uid="uid://dte1t2mhv4ayq"
+path="res://.godot/imported/small-fragments.png-cfd7e0f2eb76d1edc1bfebb48b086b82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/hit-sparks.png"
-dest_files=["res://.godot/imported/hit-sparks.png-a76bfe6bcd408334037f59382d9c1f4e.ctex"]
+source_file="res://Sprite/small-fragments.png"
+dest_files=["res://.godot/imported/small-fragments.png-cfd7e0f2eb76d1edc1bfebb48b086b82.ctex"]
 
 [params]
 

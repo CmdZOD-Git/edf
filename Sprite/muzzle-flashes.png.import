@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7g2atcyvyja3"
-path="res://.godot/imported/SquadLeader.png-5e90e0afd0da0cd8a749e0b5ebb0580a.ctex"
+uid="uid://dvst5qn4vwkkf"
+path="res://.godot/imported/muzzle-flashes.png-847f6bab7c89f7f5cf662fbf51c2e6ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/SquadLeader.png"
-dest_files=["res://.godot/imported/SquadLeader.png-5e90e0afd0da0cd8a749e0b5ebb0580a.ctex"]
+source_file="res://Sprite/muzzle-flashes.png"
+dest_files=["res://.godot/imported/muzzle-flashes.png-847f6bab7c89f7f5cf662fbf51c2e6ea.ctex"]
 
 [params]
 

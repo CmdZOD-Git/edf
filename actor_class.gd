@@ -7,7 +7,7 @@ class_name Actor extends CharacterBody2D
 @onready var item_manager = $ItemManager
 @onready var text_box = $TextBox
 var direction:Vector2 = Vector2.ZERO
-
+var collision_push:Vector2 = Vector2.ZERO
 
 signal actor_radio(data:Dictionary)
 signal projectile_hit(projectile)
@@ -53,7 +53,8 @@ func _ready() -> void:
 	# Spriteframe
 		animation_manager.sprite_frames = actor_stat.sprite_frame
 		
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	
 	if not control_manager or not control_manager.direction:
 		direction = Vector2.ZERO
 	else:
@@ -63,8 +64,7 @@ func _process(_delta: float) -> void:
 		velocity = direction * actor_stat.speed
 	else:
 		velocity = Vector2.ZERO
-	
-	velocity = velocity
+		
 	move_and_slide()
 
 func on_radio(data) -> void:
@@ -94,7 +94,6 @@ func text_toast(text:String) -> void:
 
 func take_damage(damage:float) -> void:
 	actor_stat.current_hitpoint -= damage
-	print("hitto")
 	if actor_stat.current_hitpoint <= 0:
 		text_toast("I die !")
 		actor_radio.emit({"type" : "status" , "status" : "dead" })

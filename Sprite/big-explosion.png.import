@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjcvprjalbv81"
-path="res://.godot/imported/MachineGunner-Class.png-f97f38784b3cada56babf455eb666a44.ctex"
+uid="uid://dy84rxwwe4n7"
+path="res://.godot/imported/big-explosion.png-b6fa607e37ac493b0e5db722d610ef1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/MachineGunner-Class.png"
-dest_files=["res://.godot/imported/MachineGunner-Class.png-f97f38784b3cada56babf455eb666a44.ctex"]
+source_file="res://Sprite/big-explosion.png"
+dest_files=["res://.godot/imported/big-explosion.png-b6fa607e37ac493b0e5db722d610ef1e.ctex"]
 
 [params]
 

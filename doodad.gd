@@ -43,9 +43,5 @@ func make_random_anim(doodad:DoodadList, frame_to_pick:int) -> Doodad:
 
 	return self
 	
-func toast(doodad:DoodadList, time_second:float, offset:Vector2, direction:Vector2, speed:float) -> void:
-	var animation_name:String = DoodadList.keys()[doodad]
-	play(animation_name)
-
 func on_finish() -> void:
 	queue_free()

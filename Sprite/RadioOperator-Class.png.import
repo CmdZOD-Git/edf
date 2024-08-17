@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwvemo8817jsr"
-path="res://.godot/imported/Spider.png-3c0765c5e11186c6f08acd23119b869b.ctex"
+uid="uid://wlt16ku1p1jd"
+path="res://.godot/imported/RadioOperator-Class.png-4c401e9c50901ab9c3042a483e4880d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Spider.png"
-dest_files=["res://.godot/imported/Spider.png-3c0765c5e11186c6f08acd23119b869b.ctex"]
+source_file="res://Sprite/RadioOperator-Class.png"
+dest_files=["res://.godot/imported/RadioOperator-Class.png-4c401e9c50901ab9c3042a483e4880d6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wlt16ku1p1jd"
-path="res://.godot/imported/RadioOperator-Class.png-27079df778fe5ab82f8e301d1411139e.ctex"
+uid="uid://c306d4keeumxo"
+path="res://.godot/imported/Assault-Class.png-353008c7316d9cfb589ac50ff712ac64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/RadioOperator-Class.png"
-dest_files=["res://.godot/imported/RadioOperator-Class.png-27079df778fe5ab82f8e301d1411139e.ctex"]
+source_file="res://Sprite/Assault-Class.png"
+dest_files=["res://.godot/imported/Assault-Class.png-353008c7316d9cfb589ac50ff712ac64.ctex"]
 
 [params]
 

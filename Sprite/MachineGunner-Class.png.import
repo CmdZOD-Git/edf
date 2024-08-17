@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2dlmhoe702xd"
-path="res://.godot/imported/AntiTank-Class.png-d911a413a762048376896fdfcafddb23.ctex"
+uid="uid://bjcvprjalbv81"
+path="res://.godot/imported/MachineGunner-Class.png-c9d5a54bc03d5d9d9b0d8f23832366f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/AntiTank-Class.png"
-dest_files=["res://.godot/imported/AntiTank-Class.png-d911a413a762048376896fdfcafddb23.ctex"]
+source_file="res://Sprite/MachineGunner-Class.png"
+dest_files=["res://.godot/imported/MachineGunner-Class.png-c9d5a54bc03d5d9d9b0d8f23832366f7.ctex"]
 
 [params]
 

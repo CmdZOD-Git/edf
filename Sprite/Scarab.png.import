@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxoph2fsm8o5i"
-path="res://.godot/imported/laser-flash.png-87f2d3d8cf5e320747dfd5a20c4d1806.ctex"
+uid="uid://dq8m4qv68jnt"
+path="res://.godot/imported/Scarab.png-98b667ec3bbfc6ac13b6e74bef058f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/laser-flash.png"
-dest_files=["res://.godot/imported/laser-flash.png-87f2d3d8cf5e320747dfd5a20c4d1806.ctex"]
+source_file="res://Sprite/Scarab.png"
+dest_files=["res://.godot/imported/Scarab.png-98b667ec3bbfc6ac13b6e74bef058f67.ctex"]
 
 [params]
 

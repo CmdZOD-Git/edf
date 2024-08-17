@@ -13,6 +13,7 @@ terrain_collide = true
 can_grab = false
 speed = 25.0
 max_hitpoint = 10.0
+current_hitpoint = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8en8"]
 size = Vector2(13, 7)
@@ -41,6 +42,8 @@ debug_color = Color(0, 0.6, 0, 0.0980392)
 script = ExtResource("5_bjwkw")
 
 [node name="TextBox" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 10
+offset_left = 3.0
+offset_top = -14.0
+offset_right = 43.0
 theme_override_font_sizes/font_size = 10

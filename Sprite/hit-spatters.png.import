@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lqh1entvrimx"
-path="res://.godot/imported/bullet-impacts.png-54a6915ad74784329e6dafa7684dc433.ctex"
+uid="uid://pl230iheubjv"
+path="res://.godot/imported/hit-spatters.png-90bc9279ec2801285234fd7079ceb3e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/bullet-impacts.png"
-dest_files=["res://.godot/imported/bullet-impacts.png-54a6915ad74784329e6dafa7684dc433.ctex"]
+source_file="res://Sprite/hit-spatters.png"
+dest_files=["res://.godot/imported/hit-spatters.png-90bc9279ec2801285234fd7079ceb3e5.ctex"]
 
 [params]
 

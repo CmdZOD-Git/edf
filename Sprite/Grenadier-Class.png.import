@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://docmwjl0wxiyt"
-path="res://.godot/imported/Centipede.png-d442f5c1e784b6a0c71c8fa12c0c9fff.ctex"
+uid="uid://dq7lcmlgwtka0"
+path="res://.godot/imported/Grenadier-Class.png-306a174671ed3e132f7f352158fe05ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Centipede.png"
-dest_files=["res://.godot/imported/Centipede.png-d442f5c1e784b6a0c71c8fa12c0c9fff.ctex"]
+source_file="res://Sprite/Grenadier-Class.png"
+dest_files=["res://.godot/imported/Grenadier-Class.png-306a174671ed3e132f7f352158fe05ec.ctex"]
 
 [params]
 

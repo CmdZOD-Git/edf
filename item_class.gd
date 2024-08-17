@@ -11,12 +11,14 @@ var cooldown_time:Timer
 var projectile:Projectile
 
 func _ready() -> void:
+	# Setting up area for target search
 	if item_resource.area_size > 0:
 		range_area = Area2D.new()
 		var shape = CollisionShape2D.new()
 		var circle = CircleShape2D.new()
 		add_child(range_area)
 		range_area.add_child(shape)
+		range_area.set_monitorable(false)
 		range_area.set_collision_layer_value(1, false)
 		range_area.set_collision_mask_value(1,false) # By default, only check enemy layer
 		range_area.set_collision_mask_value(2,false) # By default, only check enemy layer
@@ -46,11 +48,17 @@ func on_actor_radio(_data)-> void:
 	
 func on_cooldown_timeout() -> void:
 	if item_resource.type == item_resource.Type.Weapon:
-		fire_projectile()
+		var target:Node2D = find_target()
+		if target:
+			if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
+				fire_projectile(target, global_position)
+			elif item_resource.hit_box_type == ItemResource.HitBoxType.AREA:
+				fire_projectile(target, target.global_position)
+	
 	cooldown_time.start()
 	pass
 
-func fire_projectile() -> void:
+func find_target() -> Node2D:
 	var target_list:Array[Node2D] = range_area.get_overlapping_bodies()
 	var selected_target:Node2D = null
 	var selectecd_target_distance:float
@@ -67,10 +75,10 @@ func fire_projectile() -> void:
 		if  distance_to_target < selectecd_target_distance:
 			selected_target = item
 			selectecd_target_distance = item.global_position.distance_squared_to(global_position)
-			
-	if not selected_target:
-		return
 	
+	return selected_target
+
+func fire_projectile(target, from ) -> void:
 	# If target found, fire
 	projectile = preload("res://projectile.tscn").instantiate()
 	projectile.item_owner = actor
@@ -78,8 +86,8 @@ func fire_projectile() -> void:
 	projectile.damage = item_resource.damage
 	projectile.speed = item_resource.speed
 	projectile.texture = item_resource.texture
-	projectile.current_position = global_position
-	projectile.direction = global_position.direction_to(selected_target.global_position)
+	projectile.current_position = from
+	projectile.direction = global_position.direction_to(target.global_position)
 	
 	projectile.impact = item_resource.impact
 	projectile.impact_random = item_resource.impact_random
@@ -90,4 +98,26 @@ func fire_projectile() -> void:
 	add_child(projectile)
 
 	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : 5 } )
-	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : selected_target })
+	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })
+
+func fire_area(target) -> void:
+	#var attack_area:Area2D = Area2D.new()
+	#var shape:CollisionShape2D = CollisionShape2D.new()
+	#var circle:CircleShape2D = CircleShape2D.new()
+	#add_child(attack_area)
+	#attack_area.add_child(shape)
+	#shape.shape = circle
+	#
+	#attack_area.set_monitorable(false)
+	#shape.debug_color = Color("GREEN", 0.10)
+	#circle.radius = item_resource.melee_area_size
+	#
+	#attack_area.set_collision_mask_value(1,false) # By default, only check enemy layer
+	#attack_area.set_collision_mask_value(2,false) # By default, only check enemy layer
+	#attack_area.set_collision_mask_value(3,true) # By default, only check enemy layer
+	#
+	#
+	#attack_area.get_overlapping_bodies()
+	
+	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : 5 } )
+	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })

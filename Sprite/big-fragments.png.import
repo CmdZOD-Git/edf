@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvst5qn4vwkkf"
-path="res://.godot/imported/muzzle-flashes.png-211cd4df6ee921d3b9ab2fb780995012.ctex"
+uid="uid://3u3o5m6k2uxu"
+path="res://.godot/imported/big-fragments.png-fe7d07963616e81821245a2679cf41d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/muzzle-flashes.png"
-dest_files=["res://.godot/imported/muzzle-flashes.png-211cd4df6ee921d3b9ab2fb780995012.ctex"]
+source_file="res://Sprite/big-fragments.png"
+dest_files=["res://.godot/imported/big-fragments.png-fe7d07963616e81821245a2679cf41d4.ctex"]
 
 [params]
 

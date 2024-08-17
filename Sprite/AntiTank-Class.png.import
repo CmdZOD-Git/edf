@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq8m4qv68jnt"
-path="res://.godot/imported/Scarab.png-871b6d4ce4d03fbeede0fe74caafe674.ctex"
+uid="uid://b2dlmhoe702xd"
+path="res://.godot/imported/AntiTank-Class.png-6053d95f131507d6535287af527fc3fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Scarab.png"
-dest_files=["res://.godot/imported/Scarab.png-871b6d4ce4d03fbeede0fe74caafe674.ctex"]
+source_file="res://Sprite/AntiTank-Class.png"
+dest_files=["res://.godot/imported/AntiTank-Class.png-6053d95f131507d6535287af527fc3fd.ctex"]
 
 [params]
 

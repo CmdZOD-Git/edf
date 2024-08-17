@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3u3o5m6k2uxu"
-path="res://.godot/imported/big-fragments.png-7bbeb00ad095249736db948365167d5d.ctex"
+uid="uid://dxoph2fsm8o5i"
+path="res://.godot/imported/laser-flash.png-7513cc387068f32946d7317884555e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/big-fragments.png"
-dest_files=["res://.godot/imported/big-fragments.png-7bbeb00ad095249736db948365167d5d.ctex"]
+source_file="res://Sprite/laser-flash.png"
+dest_files=["res://.godot/imported/laser-flash.png-7513cc387068f32946d7317884555e1b.ctex"]
 
 [params]
 

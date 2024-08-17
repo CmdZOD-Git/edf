@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c306d4keeumxo"
-path="res://.godot/imported/Assault-Class.png-17513a77671e2776eb14423177bfd729.ctex"
+uid="uid://docmwjl0wxiyt"
+path="res://.godot/imported/Centipede.png-1c9a6177d6e7da72043ec49fb729f3d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Assault-Class.png"
-dest_files=["res://.godot/imported/Assault-Class.png-17513a77671e2776eb14423177bfd729.ctex"]
+source_file="res://Sprite/Centipede.png"
+dest_files=["res://.godot/imported/Centipede.png-1c9a6177d6e7da72043ec49fb729f3d5.ctex"]
 
 [params]
 

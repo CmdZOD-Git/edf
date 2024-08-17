@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy84rxwwe4n7"
-path="res://.godot/imported/big-explosion.png-a6205c399b44d1ca8aafbbc816d3f27d.ctex"
+uid="uid://b7g2atcyvyja3"
+path="res://.godot/imported/SquadLeader.png-c178761ef22eb117c66cd53f84a0d4e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/big-explosion.png"
-dest_files=["res://.godot/imported/big-explosion.png-a6205c399b44d1ca8aafbbc816d3f27d.ctex"]
+source_file="res://Sprite/SquadLeader.png"
+dest_files=["res://.godot/imported/SquadLeader.png-c178761ef22eb117c66cd53f84a0d4e1.ctex"]
 
 [params]
 

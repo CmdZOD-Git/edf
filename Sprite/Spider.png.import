@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b23sbtwr8komo"
-path="res://.godot/imported/Hornet.png-d80ba90179290317a7ee823c4a5404c2.ctex"
+uid="uid://dwvemo8817jsr"
+path="res://.godot/imported/Spider.png-bc6985fee0af592d4baaac0d156b5683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Hornet.png"
-dest_files=["res://.godot/imported/Hornet.png-d80ba90179290317a7ee823c4a5404c2.ctex"]
+source_file="res://Sprite/Spider.png"
+dest_files=["res://.godot/imported/Spider.png-bc6985fee0af592d4baaac0d156b5683.ctex"]
 
 [params]
 

@@ -1,13 +1,13 @@
 [gd_resource type="SpriteFrames" load_steps=71 format=3 uid="uid://d3qspkyf4k5s"]
 
-[ext_resource type="Texture2D" uid="uid://dy84rxwwe4n7" path="res://sprite/big-explosion.png" id="1_au25v"]
-[ext_resource type="Texture2D" uid="uid://ux3ep2a1tl4l" path="res://sprite/hit-sparks.png" id="1_c52sx"]
-[ext_resource type="Texture2D" uid="uid://3u3o5m6k2uxu" path="res://sprite/big-fragments.png" id="2_p4cpu"]
-[ext_resource type="Texture2D" uid="uid://pl230iheubjv" path="res://sprite/hit-spatters.png" id="4_anpes"]
-[ext_resource type="Texture2D" uid="uid://lqh1entvrimx" path="res://sprite/bullet-impacts.png" id="5_4ktjh"]
-[ext_resource type="Texture2D" uid="uid://bl74msdnsxit5" path="res://sprite/small-explosion.png" id="6_wxqci"]
-[ext_resource type="Texture2D" uid="uid://dte1t2mhv4ayq" path="res://sprite/small-fragments.png" id="7_utp6q"]
-[ext_resource type="Texture2D" uid="uid://dsj1u8bl1usd4" path="res://sprite/smoke.png" id="8_vd3bq"]
+[ext_resource type="Texture2D" uid="uid://dy84rxwwe4n7" path="res://Sprite/big-explosion.png" id="1_au25v"]
+[ext_resource type="Texture2D" uid="uid://ux3ep2a1tl4l" path="res://Sprite/hit-sparks.png" id="1_c52sx"]
+[ext_resource type="Texture2D" uid="uid://3u3o5m6k2uxu" path="res://Sprite/big-fragments.png" id="2_p4cpu"]
+[ext_resource type="Texture2D" uid="uid://pl230iheubjv" path="res://Sprite/hit-spatters.png" id="4_anpes"]
+[ext_resource type="Texture2D" uid="uid://lqh1entvrimx" path="res://Sprite/bullet-impacts.png" id="5_4ktjh"]
+[ext_resource type="Texture2D" uid="uid://bl74msdnsxit5" path="res://Sprite/small-explosion.png" id="6_wxqci"]
+[ext_resource type="Texture2D" uid="uid://dte1t2mhv4ayq" path="res://Sprite/small-fragments.png" id="7_utp6q"]
+[ext_resource type="Texture2D" uid="uid://dsj1u8bl1usd4" path="res://Sprite/smoke.png" id="8_vd3bq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d3gy"]
 atlas = ExtResource("1_au25v")
