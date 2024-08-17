@@ -7,78 +7,121 @@ class_name Item extends Node2D
 
 var range_area:Area2D
 var draw_range_sprite:Sprite2D
-var cooldown_time:Timer
 var projectile:Projectile
+
+var target_list:Array[Node2D] = []
+var selected_target:Node2D = null
+var target_refresh_timer:Timer
+
+var cooldown_time:Timer
+var is_primed:bool = true
 
 func _ready() -> void:
 	# Setting up area for target search
-	if item_resource.area_size > 0:
-		range_area = Area2D.new()
-		var shape = CollisionShape2D.new()
-		var circle = CircleShape2D.new()
-		add_child(range_area)
-		range_area.add_child(shape)
-		range_area.set_monitorable(false)
+	if item_resource.area_size <= 0:
+		print_debug("cannot work with area size 0 or less")
+		return
 		
-		if actor.actor_stat.is_player == true:
-			CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_ENEMY)
-		else:
-			CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_PLAYER)
-
-		shape.shape = circle
-		shape.debug_color = Color("RED", 0.10)
-		circle.radius = item_resource.area_size
-		
-		if item_resource.draw_range:
-			draw_range_sprite = Sprite2D.new()
-			draw_range_sprite.texture = preload("res://circle_area_texture.tres")
-			draw_range_sprite.self_modulate = Color( item_resource.draw_range_color , 0.1 )
-			draw_range_sprite.scale = Vector2(  2 * item_resource.area_size / 100 , 2 * item_resource.area_size / 100 )
-			add_child(draw_range_sprite)
+	range_area = Area2D.new()
+	var shape = CollisionShape2D.new()
+	var circle = CircleShape2D.new()
+	add_child(range_area)
+	range_area.add_child(shape)
+	range_area.set_monitorable(false)
 	
+	if actor.actor_stat.is_player == true:
+		CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_ENEMY)
+	else:
+		CollisionHelper.set_collision_scenario(range_area, CollisionHelper.Scenario.TARGETTING_PLAYER)
+
+	shape.shape = circle
+	shape.debug_color = Color("RED", 0.10)
+	circle.radius = item_resource.area_size
+	
+	if item_resource.draw_range:
+		draw_range_sprite = Sprite2D.new()
+		draw_range_sprite.texture = preload("res://circle_area_texture.tres")
+		# Point 0 is the inside of the range
+		# Point 1 is the outline of the range
+		draw_range_sprite.texture.gradient.set_color(0, Color(item_resource.draw_range_color, 0 ) ) 
+		draw_range_sprite.texture.gradient.set_color(1, Color(item_resource.draw_range_color, 0.2 ) )
+		
+		#draw_range_sprite.self_modulate = Color( item_resource.draw_range_color , 0.5 )
+		draw_range_sprite.scale = Vector2(  2 * item_resource.area_size / 100 , 2 * item_resource.area_size / 100 )
+		add_child(draw_range_sprite)
+	
+	# Setup fire cooldown
 	cooldown_time = Timer.new()
-	add_child(cooldown_time)
 	cooldown_time.wait_time = item_resource.cooldown_second
 	cooldown_time.one_shot = true
-	cooldown_time.start()
+	add_child(cooldown_time)
 	
-	actor.actor_radio.connect(on_actor_radio)
+	# Setup target refresh timer so that closer target are considered
+	target_refresh_timer = Timer.new()
+	target_refresh_timer.wait_time = 1
+	target_refresh_timer.one_shot = false
+	target_refresh_timer.autostart = true
+	add_child(target_refresh_timer)
+	
+	# Other Signal
 	cooldown_time.timeout.connect(on_cooldown_timeout)
+	target_refresh_timer.timeout.connect(on_target_refresh_timeout)
+	actor.actor_radio.connect(on_actor_radio)
+	range_area.body_entered.connect(on_body_entered)
+	range_area.body_exited.connect(on_body_exited)
 	
+	# Initial target array setup
+	target_list = range_area.get_overlapping_bodies()
+	
+func _process(delta: float) -> void:
+	if is_primed == true and selected_target == null:
+		find_target()
+		
+	if is_primed == true and not selected_target == null:
+		if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
+			fire_projectile(selected_target, global_position)
+		elif item_resource.hit_box_type == ItemResource.HitBoxType.AREA:
+			fire_projectile(selected_target, selected_target.global_position)
+		is_primed = false
+		
+	if is_primed == false and cooldown_time.is_stopped():
+		cooldown_time.start()
+		
 func on_actor_radio(_data)-> void:
 	pass
 	
 func on_cooldown_timeout() -> void:
-	if item_resource.type == item_resource.Type.Weapon:
-		var target:Node2D = find_target()
-		if target:
-			if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
-				fire_projectile(target, global_position)
-			elif item_resource.hit_box_type == ItemResource.HitBoxType.AREA:
-				fire_projectile(target, target.global_position)
+	is_primed = true
 	
-	cooldown_time.start()
-	pass
+func on_target_refresh_timeout() -> void:
+	if target_list.size() > 0:
+		find_target()
 
-func find_target() -> Node2D:
-	var target_list:Array[Node2D] = range_area.get_overlapping_bodies()
-	var selected_target:Node2D = null
-	var selectecd_target_distance:float
+func find_target() -> void:
+	var target_to_return:Node2D = null
+	var selected_target_distance:float
 	
 	# Find a target
 	for item:Node2D in target_list:
 		if not selected_target:
 			selected_target = item
-			selectecd_target_distance = item.global_position.distance_squared_to(global_position)
+			selected_target_distance = item.global_position.distance_squared_to(global_position)
 			continue
 			
 		var distance_to_target:float = item.global_position.distance_squared_to(global_position)
 
-		if  distance_to_target < selectecd_target_distance:
+		if  distance_to_target < selected_target_distance:
 			selected_target = item
-			selectecd_target_distance = item.global_position.distance_squared_to(global_position)
+			selected_target_distance = item.global_position.distance_squared_to(global_position)
+
+func on_body_entered(body)->void:
+	target_list.append(body)
+
+func on_body_exited(body)->void:
+	target_list.erase(body)
+	if selected_target == body:
+		selected_target = null
 	
-	return selected_target
 
 func fire_projectile(target, from ) -> void:
 	# If target found, fire

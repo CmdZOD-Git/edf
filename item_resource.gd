@@ -25,7 +25,7 @@ enum Motion {
 @export var hit_lifespan:float = 1
 
 @export_category("Range")
-@export var area_size:float ## Range of the search area for target
+@export var area_size:float = 10 ## Range of the search area for target
 @export var draw_range:bool
 @export var draw_range_color:Color = Color.RED
 
