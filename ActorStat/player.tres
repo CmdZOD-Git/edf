@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ActorStat" load_steps=5 format=3 uid="uid://7uxxw54tre4t"]
 
-[ext_resource type="Resource" uid="uid://csrvcosomvbek" path="res://Item/pistol_gun_itemresource.tres" id="1_k3280"]
+[ext_resource type="Resource" uid="uid://miwvysulv1ah" path="res://Item/melee_strike.tres" id="1_a0h6p"]
 [ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="1_vjj8x"]
-[ext_resource type="Resource" uid="uid://miwvysulv1ah" path="res://Item/melee_strike.tres" id="2_2qs83"]
+[ext_resource type="Resource" uid="uid://csrvcosomvbek" path="res://Item/pistol_gun_itemresource.tres" id="2_hlxqh"]
 [ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="2_ua85a"]
 
 [resource]
@@ -15,4 +15,4 @@ max_hitpoint = 50.0
 current_hitpoint = 0.0
 display_mode = 0
 sprite_frame = ExtResource("2_ua85a")
-item_list = Array[Resource("res://item_resource.gd")]([ExtResource("1_k3280"), ExtResource("2_2qs83")])
+item_list = Array[Resource("res://item_resource.gd")]([ExtResource("1_a0h6p"), ExtResource("2_hlxqh")])
