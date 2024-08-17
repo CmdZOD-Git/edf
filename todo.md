@@ -1,4 +1,5 @@
 # Now
+Decouple cooldown and target seek
 Spawner framework 
 Upgrade framework
 player death + health bar (beginning of an UI ?)
@@ -6,6 +7,7 @@ XP and level up ?
 
 # Later
 + Gameplay, for real ?
++ Make enemy shooting less ryhtmic
 + Melee as hitscan rather than projectile reskin ?
 + Changing projectile to move_and_collide ?
 

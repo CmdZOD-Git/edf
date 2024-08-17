@@ -53,6 +53,11 @@ func spawn_enemy() -> void:
 	enemy_spawn.global_position = Vector2( randx , randy )
 	
 	 # Give enemy bite
+	#var weapon_item:Item = preload("res://Item/item_template.tscn").instantiate()
+	#weapon_item.item_resource = load("res://Item/scarab_melee_strike.tres").duplicate()
+	#enemy_spawn.item_manager.add_child(weapon_item)
+	
+	# Give enemy gun
 	var weapon_item:Item = preload("res://Item/item_template.tscn").instantiate()
-	weapon_item.item_resource = load("res://Item/scarab_melee_strike.tres").duplicate()
+	weapon_item.item_resource = load("res://Item/scarab_gun.tres").duplicate()
 	enemy_spawn.item_manager.add_child(weapon_item)

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://oqd118owcekd"]
+
+[ext_resource type="Script" path="res://item_resource.gd" id="1_wy230"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bxaqa"]
+load_path = "res://.godot/imported/bullets&plasma.png-16984755a953f412ed7cbf99f3165bf7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nvil"]
+atlas = SubResource("CompressedTexture2D_bxaqa")
+region = Rect2(0, 0, 8, 8)
+
+[resource]
+script = ExtResource("1_wy230")
+title = "Pistol gun"
+type = 0
+hit_box_type = 0
+cooldown_second = 2.0
+damage = 1.0
+number_of_hit = 1
+texture = SubResource("AtlasTexture_1nvil")
+hit_radius = 3.0
+hit_lifespan = 2.0
+area_size = 120.0
+draw_range = false
+draw_range_color = Color(1, 0, 1, 1)
+motion = 0
+priority = 5
+speed = 1.0
+spray_degree = 10.0
+impact = 1
+impact_random = true
+impact_random_framecount = 2
