@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=5 format=3 uid="uid://d0wcadgmhc7hu"]
+
+[ext_resource type="Script" path="res://item_resource.gd" id="1_2su03"]
+[ext_resource type="Resource" uid="uid://dumbtho6ayvqg" path="res://ActorStat/scarab_lv1.tres" id="2_gt1nh"]
+[ext_resource type="Texture2D" uid="uid://c18sfecmxv4bh" path="res://UI/bullets&plasma.png" id="2_xrcwf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx7ht"]
+atlas = ExtResource("2_xrcwf")
+region = Rect2(8, 0, 8, 8)
+
+[resource]
+script = ExtResource("1_2su03")
+title = "Spwaner of Scarab"
+type = 1
+hit_box_type = 1
+cooldown_second = 0.5
+damage = 0.0
+number_of_hit = 1
+texture = SubResource("AtlasTexture_dx7ht")
+hit_radius = 1.0
+hit_lifespan = 0.1
+area_size = 20.0
+draw_range = true
+draw_range_color = Color(1, 0, 0.983333, 1)
+motion = 2
+priority = 7
+speed = 0.0
+spray_degree = 0.0
+spawning_object = ExtResource("2_gt1nh")
+spawn_personal_limit = 5
+impact = -1
+impact_random = false
+impact_random_framecount = 1

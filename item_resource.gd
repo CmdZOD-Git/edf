@@ -2,6 +2,7 @@ class_name ItemResource extends Resource
 
 enum Type {
 	Weapon,
+	Spawner,
 }
 
 enum HitBoxType {
@@ -12,12 +13,15 @@ enum HitBoxType {
 enum Motion {
 	fire,
 	melee,
+	spawn,
 }
 
 @export var title:String = "default gun"
 @export var type:Type
 @export var hit_box_type:HitBoxType = HitBoxType.PROJECTILE
 @export var cooldown_second:float
+
+@export_category("weapon related")
 @export var damage:float
 @export var number_of_hit:int = 1
 @export var texture:Texture2D
@@ -36,6 +40,10 @@ enum Motion {
 @export_category("firing projectile only")
 @export var speed:float
 @export var spray_degree:float = 0
+
+@export_category("firing projectile only")
+@export var spawning_object:ActorStat
+@export var spawn_personal_limit:int = 0
 
 @export_category("impact")
 @export var impact:Doodad.DoodadList

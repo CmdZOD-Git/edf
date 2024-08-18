@@ -30,7 +30,7 @@ func _ready() -> void:
 		#var to spawn = load("res://ActorStat/scarab_lv1.tres")
 		#spawn_enemy(to_spawn)
 		
-	for i in range(5):
+	for i in range(3):
 		var to_spawn = load("res://ActorStat/spawner_lv1.tres")
 		spawn_enemy(to_spawn)
 		

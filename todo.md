@@ -1,5 +1,4 @@
 # Now
-Spawner framework 
 Upgrade framework
 player death + health bar (beginning of an UI ?)
 XP and level up ?
@@ -13,6 +12,7 @@ XP and level up ?
 # Idea
 
 # DONE (in reverse)
+Spawner framework 
 Make something about hitbox size -> custom to scene and linked to actor size collision_box_vector
 Animation manager rework to support fully scene and animated sprite + breathing complete rework
 Add item to actor stat and display of scene instead of spriteframe

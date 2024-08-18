@@ -13,6 +13,8 @@ var target_list:Array[Node2D] = []
 var selected_target:Node2D = null
 var target_refresh_timer:Timer
 
+var spawn_list:Array[Node2D] = []
+
 var cooldown_time:Timer
 var is_primed:bool = true
 
@@ -74,18 +76,27 @@ func _ready() -> void:
 	target_list = range_area.get_overlapping_bodies()
 	
 func _process(_delta: float) -> void:
-	if is_primed == true and selected_target == null:
-		select_closest_target()
+	if actor.is_active == false:
+		return
+	
+	if item_resource.type == item_resource.Type.Weapon:
+		if is_primed == true and selected_target == null:
+			select_closest_target()
+			
+		if is_primed == true and not selected_target == null:
+			if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
+				fire_projectile(selected_target, global_position)
+			elif item_resource.hit_box_type == ItemResource.HitBoxType.AREA:
+				fire_projectile(selected_target, selected_target.global_position)
+			is_primed = false
 		
-	if is_primed == true and not selected_target == null:
-		if item_resource.hit_box_type == ItemResource.HitBoxType.PROJECTILE:
-			fire_projectile(selected_target, global_position)
-		elif item_resource.hit_box_type == ItemResource.HitBoxType.AREA:
-			fire_projectile(selected_target, selected_target.global_position)
-		is_primed = false
-		
+	elif item_resource.type == item_resource.Type.Spawner:
+		if is_primed == true:
+			spawn_in_range(item_resource.spawning_object)
+			is_primed = false
+			
 	if is_primed == false and cooldown_time.is_stopped():
-		cooldown_time.start()
+			cooldown_time.start()
 		
 func on_actor_radio(_data)-> void:
 	pass
@@ -146,3 +157,25 @@ func fire_projectile(target, from ) -> void:
 
 	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : item_resource.priority } )
 	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })
+
+func spawn_in_range(spawn_object:ActorStat) -> void:
+	actor.text_box.text = "Spawn (%s/%s)" % [spawn_list.size() , item_resource.spawn_personal_limit]
+
+	if spawn_list.size() >= item_resource.spawn_personal_limit:
+		return
+	
+	var to_spawn:Actor = preload("res://actor_template.tscn").instantiate()
+	to_spawn.actor_stat = spawn_object.duplicate()
+	Global.main.add_child(to_spawn)
+	spawn_list.append(to_spawn)
+	
+	to_spawn.actor_radio.connect(on_spawn_death)
+	#to_spawn.tree_exiting.connect(func():spawn_list.erase(to_spawn)) # Used a signal instead
+	
+	var spawn_location:Vector2 = Vector2.from_angle(randf_range(- PI, PI))
+	spawn_location *= item_resource.area_size
+	to_spawn.global_position = global_position + spawn_location
+
+func on_spawn_death(data) -> void:
+	if data.type == "status" and data.status == "dead":
+		spawn_list.erase(data.who)

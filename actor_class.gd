@@ -8,6 +8,7 @@ class_name Actor extends CharacterBody2D
 @onready var text_box = $TextBox
 var direction:Vector2 = Vector2.ZERO
 var collision_push:Vector2 = Vector2.ZERO
+var is_active:bool = true
 
 signal actor_radio(data:Dictionary)
 signal projectile_hit(projectile)
@@ -48,7 +49,9 @@ func _ready() -> void:
 		item_manager.add_child(item_to_add)
 		
 func _physics_process(_delta: float) -> void:
-	
+	if is_active == false:
+		return
+		
 	if not control_manager or not control_manager.direction:
 		direction = Vector2.ZERO
 	else:
@@ -88,17 +91,18 @@ func take_damage(damage:float) -> void:
 	actor_stat.current_hitpoint -= damage
 	if actor_stat.current_hitpoint <= 0:
 		text_toast("I die !")
-		actor_radio.emit({"type" : "status" , "status" : "dead" })
+		actor_radio.emit({"type" : "status" , "status" : "dead" , "who" : self })
 	else:
 		text_toast("HP %s" % [actor_stat.current_hitpoint])
 
 func die() -> void:
 	collision_box.set_deferred("disabled", true)
 	actor_stat.speed = 0
+	is_active = false
 	var tween:Tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "self_modulate:a", 0, 5)
+	tween.tween_property(self, "modulate:a", 0, 4)
 	actor_radio.emit({"type" : "animation", "action" : "death", "priority" : 10 , "hold" : true } )
 	await get_tree().create_timer(5).timeout
 	queue_free()
