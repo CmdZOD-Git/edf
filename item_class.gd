@@ -153,7 +153,7 @@ func fire_projectile(target, from ) -> void:
 	
 	var applied_spray:float = randf_range( - item_resource.spray_degree , item_resource.spray_degree)
 	projectile.direction = projectile.direction.rotated( deg_to_rad( applied_spray ) )
-	add_child(projectile)
+	Global.main.add_child(projectile) # add_child(projectile)
 
 	actor.actor_radio.emit({"type" : "animation", "action" : ItemResource.Motion.keys()[item_resource.motion], "priority" : item_resource.priority } )
 	actor.actor_radio.emit({"type" : "facing_mode" , "mode" : "focus" , "focused_item" : target })

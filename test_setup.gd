@@ -25,12 +25,20 @@ func _ready() -> void:
 	main.add_child(player)
 	player.global_position = Vector2(200,128)
 	
+	# spawn pickup
+	for i in range(5):
+		var pickup:Actor
+		pickup = preload("res://actor_template.tscn").instantiate()
+		pickup.actor_stat = load("res://Pickup/health_pickup.tres").duplicate()
+		main.add_child(pickup)
+		pickup.global_position = Vector2(230 + randi_range(-40, 40) ,140 + randi_range(-40, 40) ) 
+	
 	# spawn enemies
 	#for i in range(Global.MAX_ACTOR):
 		#var to spawn = load("res://ActorStat/scarab_lv1.tres")
 		#spawn_enemy(to_spawn)
 		
-	for i in range(3):
+	for i in range(0):
 		var to_spawn = load("res://ActorStat/spawner_lv1.tres")
 		spawn_enemy(to_spawn)
 		

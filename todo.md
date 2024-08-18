@@ -1,13 +1,13 @@
 # Now
-Upgrade framework
+Upgrade framework (as a pickup for now)
 player death + health bar (beginning of an UI ?)
 XP and level up ?
 
 # Later
 + Gameplay, for real ?
-+ Make enemy shooting less ryhtmic
 + Melee as hitscan rather than projectile reskin ?
-+ Changing projectile to move_and_collide ?
++ Changing projectile to use a raycast first ? -> Avoid too fast projectile missing collision
++ Meta layer
 
 # Idea
 

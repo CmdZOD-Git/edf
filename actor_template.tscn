@@ -7,15 +7,18 @@
 
 [sub_resource type="Resource" id="Resource_04dm4"]
 script = ExtResource("2_3fthh")
-is_player = false
-terrain_collide = true
-can_grab = false
-speed = 25.0
-max_hitpoint = 10.0
-current_hitpoint = 0.0
-hitbox_size = Vector2(13, 7)
-display_mode = 0
-item_list = Array[Resource("res://item_resource.gd")]([])
+is_player = null
+terrain_collide = null
+can_grab = null
+grab_range = null
+speed = null
+max_hitpoint = null
+current_hitpoint = null
+hitbox_size = null
+display_mode = null
+item_list = null
+is_pickup = null
+pickup_effect_list = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8en8"]
 resource_local_to_scene = true

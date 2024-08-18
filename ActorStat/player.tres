@@ -9,7 +9,8 @@
 script = ExtResource("1_vjj8x")
 is_player = true
 terrain_collide = true
-can_grab = false
+can_grab = true
+grab_range = 20.0
 speed = 75.0
 max_hitpoint = 50.0
 current_hitpoint = 0.0

@@ -27,6 +27,7 @@ motion = 1
 priority = 6
 speed = 0.0
 spray_degree = 0.0
+spawn_personal_limit = 0
 impact = 1
 impact_random = true
 impact_random_framecount = 1

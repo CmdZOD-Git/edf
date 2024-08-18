@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://delmycbfvhmc"]
+
+[ext_resource type="Texture2D" uid="uid://fobcvuenjugy" path="res://UI/icon-set.png" id="1_r5rg3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umr8o"]
+atlas = ExtResource("1_r5rg3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eckqk"]
+atlas = ExtResource("1_r5rg3")
+region = Rect2(48, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_umr8o")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_eckqk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]

@@ -24,6 +24,7 @@ Global="*res://global.gd"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/always_on_top=true
 window/stretch/mode="viewport"
 
 [input]
@@ -69,5 +70,5 @@ no={
 2d_physics/layer_1="terrain"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
-2d_physics/layer_4="pickable"
+2d_physics/layer_4="pickup"
 2d_physics/layer_5="shot"
