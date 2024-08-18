@@ -13,10 +13,12 @@ can_grab = false
 speed = 25.0
 max_hitpoint = 10.0
 current_hitpoint = 0.0
+hitbox_size = Vector2(13, 7)
 display_mode = 0
 item_list = Array[Resource("res://item_resource.gd")]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8en8"]
+resource_local_to_scene = true
 size = Vector2(13, 7)
 
 [node name="Actor" type="CharacterBody2D"]

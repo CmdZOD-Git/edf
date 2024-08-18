@@ -26,6 +26,7 @@ func _ready() -> void:
 		range_area.set_collision_mask_value(3,false)
 		shape.shape = circle
 		circle.radius = area_size
+		shape.debug_color = Color("SPRING_GREEN", 0.01)
 		
 		if draw_range:
 			draw_range_sprite = Sprite2D.new()

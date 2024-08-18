@@ -21,7 +21,7 @@ func _ready() -> void:
 	# Camera
 	if actor_stat.is_player == true:
 		var camera = Camera2D.new()
-		camera.zoom = Vector2 (1,1) * 3
+		camera.zoom = Vector2 (1,1) * 2
 		add_child(camera)
 	
 	# Controller
@@ -37,6 +37,9 @@ func _ready() -> void:
 		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.PLAYER)
 	else:
 		CollisionHelper.set_collision_scenario(self, CollisionHelper.Scenario.ENEMY)
+		
+	# Collision box size
+	collision_box.shape.size = actor_stat.hitbox_size
 	
 	# item
 	for item in actor_stat.item_list:

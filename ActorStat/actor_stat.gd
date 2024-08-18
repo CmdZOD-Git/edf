@@ -12,6 +12,7 @@ enum DisplayMode {
 @export var speed:float = 25
 @export var max_hitpoint:float = 10
 @export var current_hitpoint:float
+@export var hitbox_size:Vector2 = Vector2(13,7)
 
 @export_group("display")
 @export var display_mode:DisplayMode = DisplayMode.SPRITEFRAME

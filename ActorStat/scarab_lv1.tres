@@ -12,6 +12,7 @@ can_grab = false
 speed = 10.0
 max_hitpoint = 3.0
 current_hitpoint = 0.0
+hitbox_size = Vector2(13, 7)
 display_mode = 0
 sprite_frame = ExtResource("2_gcg8l")
 item_list = Array[Resource("res://item_resource.gd")]([ExtResource("1_1cxkj")])
