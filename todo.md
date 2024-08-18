@@ -1,5 +1,6 @@
 # Now
 Spawner framework 
+Make something about hitbox size
 Upgrade framework
 player death + health bar (beginning of an UI ?)
 XP and level up ?
