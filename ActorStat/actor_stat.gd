@@ -27,4 +27,3 @@ enum DisplayMode {
 @export_group("pickup")
 @export var is_pickup:bool = false
 @export var pickup_effect_list:Array[PickupEffect]
-
