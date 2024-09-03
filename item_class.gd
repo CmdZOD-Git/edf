@@ -5,6 +5,8 @@ class_name Item extends Node2D
 
 @export var item_resource:ItemResource
 
+@export var upgrade:Array[UpgradeEffect]
+
 var range_area:Area2D
 var draw_range_sprite:Sprite2D
 var projectile:Projectile
