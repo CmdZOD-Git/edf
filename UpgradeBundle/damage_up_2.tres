@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeBundle" load_steps=5 format=3 uid="uid://dxqa0ic1pf4wq"]
+
+[ext_resource type="Script" path="res://upgrade_bundle.gd" id="1_if2ps"]
+[ext_resource type="Script" path="res://UpgradeEffect/upgrade_effect.gd" id="2_gqogk"]
+[ext_resource type="Resource" uid="uid://ckf72u6ucv2hy" path="res://UpgradeBundle/damage_up_1.tres" id="2_uoqdw"]
+[ext_resource type="Resource" uid="uid://cv43ux0yotcxh" path="res://UpgradeEffect/projectile_damage_up.tres" id="3_0q11n"]
+
+[resource]
+script = ExtResource("1_if2ps")
+title = "Damage Up - 1"
+tag = Array[int]([0])
+upgrade_list = Array[ExtResource("2_gqogk")]([ExtResource("3_0q11n")])
+requirement = Array[ExtResource("1_if2ps")]([ExtResource("2_uoqdw")])

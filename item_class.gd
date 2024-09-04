@@ -5,7 +5,8 @@ class_name Item extends Node2D
 
 @export var item_resource:ItemResource
 
-@export var upgrade:Array[UpgradeEffect]
+var unlocked_upgrade:Array[UpgradeBundle]
+var upgrade_list:Array[UpgradeEffect]
 
 var range_area:Area2D
 var draw_range_sprite:Sprite2D
@@ -153,6 +154,8 @@ func fire_projectile(target, from ) -> void:
 	projectile.impact_random = item_resource.impact_random
 	projectile.impact_random_framecount = item_resource.impact_random_framecount
 	
+	apply_upgrade_projectile(projectile)
+	
 	var applied_spray:float = randf_range( - item_resource.spray_degree , item_resource.spray_degree)
 	projectile.direction = projectile.direction.rotated( deg_to_rad( applied_spray ) )
 	Global.main.add_child(projectile) # add_child(projectile)
@@ -181,3 +184,11 @@ func spawn_in_range(spawn_object:ActorStat) -> void:
 func on_spawn_death(data) -> void:
 	if data.type == "status" and data.status == "dead":
 		spawn_list.erase(data.who)
+
+func apply_upgrade_projectile(projectile) -> void:
+	for upgrade:UpgradeEffect in upgrade_list:
+		if not upgrade.has_method("_apply"):
+			continue
+		
+		if upgrade.target == upgrade.Target.Projectile:
+			upgrade._apply(projectile)

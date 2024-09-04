@@ -1,6 +1,10 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://csrvcosomvbek"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=8 format=3 uid="uid://csrvcosomvbek"]
 
+[ext_resource type="Script" path="res://upgrade_bundle.gd" id="1_as6xy"]
 [ext_resource type="Script" path="res://item_resource.gd" id="1_rkr3x"]
+[ext_resource type="Resource" uid="uid://ckf72u6ucv2hy" path="res://UpgradeBundle/damage_up_1.tres" id="2_bxuyh"]
+[ext_resource type="Resource" uid="uid://dxqa0ic1pf4wq" path="res://UpgradeBundle/damage_up_2.tres" id="3_i4gl6"]
+[ext_resource type="Script" path="res://UpgradeEffect/upgrade_effect.gd" id="5_0hqbn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bxaqa"]
 load_path = "res://.godot/imported/bullets&plasma.png-16984755a953f412ed7cbf99f3165bf7.ctex"
@@ -31,3 +35,6 @@ spawn_personal_limit = 0
 impact = 1
 impact_random = true
 impact_random_framecount = 2
+available_upgrade = Array[ExtResource("1_as6xy")]([ExtResource("2_bxuyh"), ExtResource("3_i4gl6")])
+unlocked_upgrade = Array[ExtResource("1_as6xy")]([])
+upgrade_list = Array[ExtResource("5_0hqbn")]([])

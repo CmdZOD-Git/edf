@@ -49,3 +49,6 @@ enum Motion {
 @export var impact:Doodad.DoodadList
 @export var impact_random:bool = false
 @export var impact_random_framecount:int
+
+@export_category("impact")
+@export var available_upgrade:Array[UpgradeBundle]

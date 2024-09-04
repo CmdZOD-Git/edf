@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwtow2hwme1y"]
+
+[ext_resource type="Theme" uid="uid://bq66pgtuag3r1" path="res://UpgradeEffect/upgrade_theme.tres" id="1_8qyqu"]
+
+[sub_resource type="Gradient" id="Gradient_27n44"]
+offsets = PackedFloat32Array(0.888268)
+colors = PackedColorArray(1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_803l5"]
+gradient = SubResource("Gradient_27n44")
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_8qyqu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8qyqu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_8qyqu")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_8qyqu")
+texture = SubResource("GradientTexture2D_803l5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_8qyqu")
+text = "test"
