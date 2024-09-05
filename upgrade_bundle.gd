@@ -8,3 +8,4 @@ enum UpgradeTag {
 @export var tag:Array[UpgradeTag]
 @export  var upgrade_list:Array[UpgradeEffect]
 @export var requirement:Array[UpgradeBundle] ## By default requirement is AND
+@export var icon:Texture2D = preload("res://Texture/placeholder_texture.tres")

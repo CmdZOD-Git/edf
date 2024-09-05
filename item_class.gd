@@ -185,10 +185,10 @@ func on_spawn_death(data) -> void:
 	if data.type == "status" and data.status == "dead":
 		spawn_list.erase(data.who)
 
-func apply_upgrade_projectile(projectile) -> void:
+func apply_upgrade_projectile(upgrade_projectile) -> void:
 	for upgrade:UpgradeEffect in upgrade_list:
 		if not upgrade.has_method("_apply"):
 			continue
 		
 		if upgrade.target == upgrade.Target.Projectile:
-			upgrade._apply(projectile)
+			upgrade._apply(upgrade_projectile)

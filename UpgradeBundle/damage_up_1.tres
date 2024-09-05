@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="UpgradeBundle" load_steps=4 format=3 uid="uid://ckf72u6ucv2hy"]
+[gd_resource type="Resource" script_class="UpgradeBundle" load_steps=5 format=3 uid="uid://ckf72u6ucv2hy"]
 
 [ext_resource type="Script" path="res://upgrade_bundle.gd" id="1_0ljtb"]
+[ext_resource type="Texture2D" uid="uid://df8hnutm5m434" path="res://Texture/Atlas/bullet_blue.tres" id="1_1l2wo"]
 [ext_resource type="Script" path="res://UpgradeEffect/upgrade_effect.gd" id="2_urmr4"]
 [ext_resource type="Resource" uid="uid://cv43ux0yotcxh" path="res://UpgradeEffect/projectile_damage_up.tres" id="3_y8mwt"]
 
@@ -10,3 +11,4 @@ title = "Damage Up - 1"
 tag = Array[int]([0])
 upgrade_list = Array[ExtResource("2_urmr4")]([ExtResource("3_y8mwt")])
 requirement = Array[ExtResource("1_0ljtb")]([])
+icon = ExtResource("1_1l2wo")

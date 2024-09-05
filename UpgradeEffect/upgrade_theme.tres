@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://bq66pgtuag3r1"]
 
-[ext_resource type="StyleBox" uid="uid://cdo2f1vthee53" path="res://UpgradeEffect/upgrade_stylebox.tres" id="1_jnfuj"]
+[ext_resource type="StyleBox" uid="uid://cdo2f1vthee53" path="res://UpgradeEffect/upgrade_stylebox_normal.tres" id="1_jnfuj"]
 
 [resource]
 Label/colors/font_color = Color(0, 0, 0, 1)

@@ -25,5 +25,5 @@ enum Timing {
 
 @export var amount:float
 
-func _apply(to_what):
+func _apply(_to_what):
 	pass
