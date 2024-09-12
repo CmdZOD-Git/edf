@@ -26,12 +26,12 @@ func _ready() -> void:
 	player.global_position = Vector2(200,128)
 	
 	# spawn pickup
-	for i in range(5):
-		var pickup:Actor
-		pickup = preload("res://actor_template.tscn").instantiate()
-		pickup.actor_stat = load("res://Pickup/health_pickup.tres").duplicate()
-		main.add_child(pickup)
-		pickup.global_position = Vector2(230 + randi_range(-40, 40) ,140 + randi_range(-40, 40) ) 
+	#for i in range(5):
+		#var pickup:Actor
+		#pickup = preload("res://actor_template.tscn").instantiate()
+		#pickup.actor_stat = load("res://Pickup/health_pickup.tres").duplicate()
+		#main.add_child(pickup)
+		#pickup.global_position = Vector2(230 + randi_range(-40, 40) ,140 + randi_range(-40, 40) ) 
 	
 	# spawn enemies
 	#for i in range(Global.MAX_ACTOR):
@@ -41,6 +41,20 @@ func _ready() -> void:
 	for i in range(0):
 		var to_spawn = load("res://ActorStat/spawner_lv1.tres")
 		spawn_enemy(to_spawn)
+		
+	# Instant spawn upgrade panel
+	#var test_list:Array[UpgradeBundle]
+	#test_list.append(load("res://UpgradeBundle/damage_up_1.tres").duplicate())
+	#test_list.append(load("res://UpgradeBundle/damage_up_2.tres").duplicate())
+	#Global.call_upgrade_panel.emit(player, test_list)
+	
+	# spawn instant upgrade pickup
+	for i in range(3):
+		var pickup:Actor
+		pickup = preload("res://actor_template.tscn").instantiate()
+		pickup.actor_stat = load("res://Pickup/upgrade_pickup.tres").duplicate()
+		main.add_child(pickup)
+		pickup.global_position = Vector2(230 + randi_range(-40, 40) ,140 + randi_range(-40, 40) ) 
 		
 func spawn_enemy(data:ActorStat) -> void:
 	if get_tree().root.get_node("Main").get_child_count() >= Global.MAX_ACTOR:

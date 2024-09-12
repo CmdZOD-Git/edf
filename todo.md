@@ -1,5 +1,6 @@
 # Now
-Upgrade framework (as a pickup for now)
+Still need a method to select UpgradeBundle available
+Apply effect of the pickup
 player death + health bar (beginning of an UI ?)
 XP and level up ?
 
@@ -12,6 +13,8 @@ XP and level up ?
 # Idea
 
 # DONE (in reverse)
+Moving closer to the real thing → upgrade framework (as a pickup for now)
+Learned how to call a specific event through another action
 Spawner framework 
 Make something about hitbox size -> custom to scene and linked to actor size collision_box_vector
 Animation manager rework to support fully scene and animated sprite + breathing complete rework

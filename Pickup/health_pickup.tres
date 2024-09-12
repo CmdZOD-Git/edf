@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="ActorStat" load_steps=5 format=3 uid="uid://bxn0026busfb3"]
+[gd_resource type="Resource" script_class="ActorStat" load_steps=6 format=3 uid="uid://bxn0026busfb3"]
 
 [ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="1_8bexx"]
+[ext_resource type="Script" path="res://item_resource.gd" id="1_fk1m0"]
 [ext_resource type="Script" path="res://pickup_effect.gd" id="1_q0jy4"]
 [ext_resource type="SpriteFrames" uid="uid://delmycbfvhmc" path="res://SpriteFrame/health_pickup_spriteframe.tres" id="2_6pknd"]
 
-[sub_resource type="Resource" id="Resource_o2bml"]
+[sub_resource type="Resource" id="Resource_u6pwc"]
 script = ExtResource("1_q0jy4")
-type = 0
+type = 1
 stat = 0
-amout = 10.0
+amout = 0.0
+trigger = 0
 
 [resource]
 script = ExtResource("1_8bexx")
@@ -22,6 +24,6 @@ current_hitpoint = null
 hitbox_size = Vector2(5, 5)
 display_mode = null
 sprite_frame = ExtResource("2_6pknd")
-item_list = null
+item_list = Array[ExtResource("1_fk1m0")]([])
 is_pickup = true
-pickup_effect_list = Array[ExtResource("1_q0jy4")]([SubResource("Resource_o2bml")])
+pickup_effect_list = Array[ExtResource("1_q0jy4")]([SubResource("Resource_u6pwc")])

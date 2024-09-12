@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cv43ux0yotcxh" path="res://UpgradeEffect/projectile_damage_up.tres" id="3_y8mwt"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_0ljtb")
 title = "Damage Up - 1"
 tag = Array[int]([0])

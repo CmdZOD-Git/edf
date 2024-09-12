@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ActorStat" load_steps=5 format=3 uid="uid://dfnprciisr62b"]
+
+[ext_resource type="Script" path="res://pickup_effect.gd" id="1_guh3x"]
+[ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="2_rwyl2"]
+[ext_resource type="SpriteFrames" uid="uid://deur2ogjsmxia" path="res://SpriteFrame/upgrade_pickup_spriteframe.tres" id="3_a3awa"]
+
+[sub_resource type="Resource" id="Resource_o2bml"]
+script = ExtResource("1_guh3x")
+type = 1
+stat = 0
+amout = 10.0
+trigger = 0
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_rwyl2")
+is_player = null
+terrain_collide = false
+can_grab = null
+grab_range = 0.0
+speed = 0.0
+max_hitpoint = 1.0
+current_hitpoint = null
+hitbox_size = Vector2(5, 5)
+display_mode = null
+sprite_frame = ExtResource("3_a3awa")
+item_list = null
+is_pickup = true
+pickup_effect_list = Array[ExtResource("1_guh3x")]([SubResource("Resource_o2bml")])
