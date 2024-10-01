@@ -5,9 +5,6 @@ class_name Item extends Node2D
 
 @export var item_resource:ItemResource
 
-var unlocked_upgrade:Array[UpgradeBundle]
-var upgrade_list:Array[UpgradeEffect]
-
 var range_area:Area2D
 var draw_range_sprite:Sprite2D
 var projectile:Projectile
@@ -186,9 +183,38 @@ func on_spawn_death(data) -> void:
 		spawn_list.erase(data.who)
 
 func apply_upgrade_projectile(upgrade_projectile) -> void:
-	for upgrade:UpgradeEffect in upgrade_list:
-		if not upgrade.has_method("_apply"):
-			continue
-		
-		if upgrade.target == upgrade.Target.Projectile:
-			upgrade._apply(upgrade_projectile)
+	#for upgrade:UpgradeEffect in upgrade_list:
+		#if not upgrade.has_method("_apply"):
+			#continue
+		#
+		#if upgrade.target == upgrade.Target.Projectile:
+			#upgrade._apply(upgrade_projectile)
+	pass
+
+func gather_upgrade()-> Array[UpgradeBundle]:
+	var bundle_list:Array[UpgradeBundle] = []
+	
+	for upgrade:UpgradeBundle in item_resource.available_upgrade_bundle:
+		upgrade.holder = self
+		bundle_list.append(upgrade)
+	
+	return bundle_list
+
+func picked_upgrade(picked_upgrade_bundle:UpgradeBundle) -> void:
+	for effect:UpgradeEffect in picked_upgrade_bundle.upgrade_list:
+		if effect.target == UpgradeEffect.Target.Actor:
+			actor.actor_stat.selected_upgrade_effect.append(effect.duplicate())
+		elif effect.target == UpgradeEffect.Target.Item:
+			item_resource.selected_upgrade_effect.append(effect.duplicate())
+		elif effect.target == UpgradeEffect.Target.Projectile:
+			item_resource.selected_upgrade_effect.append(effect.duplicate())
+		else:
+			print("don't know where to apply effect")
+	
+	if picked_upgrade_bundle.holder == self:
+		item_resource.selected_upgrade_bundle.append(picked_upgrade_bundle.duplicate())
+		item_resource.available_upgrade_bundle.erase(picked_upgrade_bundle)
+	else:
+		print("don't know where to remove upgrade")
+
+	

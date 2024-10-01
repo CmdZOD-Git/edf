@@ -24,6 +24,11 @@ enum DisplayMode {
 @export_group("item")
 @export var item_list:Array[ItemResource]
 
+@export_group("upgrade")
+@export var available_upgrade_bundle:Array[UpgradeBundle]
+var selected_upgrade_bundle:Array[UpgradeBundle]
+var selected_upgrade_effect:Array[UpgradeEffect]
+
 @export_group("pickup")
 @export var is_pickup:bool = false
 @export var pickup_effect_list:Array[PickupEffect]

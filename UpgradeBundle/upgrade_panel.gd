@@ -1,10 +1,10 @@
 extends Control
 
 ## Reminder of how the system works
-## Upgrade panel
-##	 	↳ Upgrade bundle
-##			 ↳ Upgrade choice
-##			 		↳ Upgrade effect
+## [GUI] Upgrade panel
+##	 	↳ [Obj] Upgrade bundle
+##			 ↳ [Act] Upgrade choice
+##			 		↳ [Obj] Upgrade effect
 ##
 ## - upgrade panel trigger is requested through a global signal
 ## - the upgrade bundle list given to the signal is already baked
@@ -41,7 +41,8 @@ func show_panel(who:Actor, upgrade_bundle_list:Array[UpgradeBundle]) -> void:
 	container.get_child(0).grab_focus()
 	
 func choice_made(upgrade_bundle_item:UpgradeBundle) -> void:
-	print("choice made %s" % [upgrade_bundle_item])
+	#print("choice made %s" % [upgrade_bundle_item])
+	upgrade_bundle_item.holder.picked_upgrade(upgrade_bundle_item)
 	
 	if container.get_child_count() > 0:
 		for item in container.get_children():

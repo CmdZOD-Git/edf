@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ActorStat" load_steps=5 format=3 uid="uid://dfnprciisr62b"]
+[gd_resource type="Resource" script_class="ActorStat" load_steps=6 format=3 uid="uid://dfnprciisr62b"]
 
+[ext_resource type="Script" path="res://upgrade_bundle.gd" id="1_e7e78"]
 [ext_resource type="Script" path="res://pickup_effect.gd" id="1_guh3x"]
 [ext_resource type="Script" path="res://ActorStat/actor_stat.gd" id="2_rwyl2"]
 [ext_resource type="SpriteFrames" uid="uid://deur2ogjsmxia" path="res://SpriteFrame/upgrade_pickup_spriteframe.tres" id="3_a3awa"]
@@ -25,5 +26,6 @@ hitbox_size = Vector2(5, 5)
 display_mode = null
 sprite_frame = ExtResource("3_a3awa")
 item_list = null
+available_upgrade_bundle = Array[ExtResource("1_e7e78")]([])
 is_pickup = true
 pickup_effect_list = Array[ExtResource("1_guh3x")]([SubResource("Resource_o2bml")])

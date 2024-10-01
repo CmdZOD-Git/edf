@@ -36,6 +36,7 @@ layout_mode = 2
 theme = ExtResource("1_8qyqu")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme = ExtResource("1_8qyqu")
 texture = ExtResource("5_dw2y5")

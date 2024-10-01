@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ActorStat" load_steps=7 format=3 uid="uid://7uxxw54tre4t"]
+[gd_resource type="Resource" script_class="ActorStat" load_steps=8 format=3 uid="uid://7uxxw54tre4t"]
 
 [ext_resource type="Script" path="res://item_resource.gd" id="1_4ff8d"]
 [ext_resource type="Resource" uid="uid://miwvysulv1ah" path="res://Item/melee_strike.tres" id="1_a0h6p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://csrvcosomvbek" path="res://Item/pistol_gun_itemresource.tres" id="2_hlxqh"]
 [ext_resource type="SpriteFrames" uid="uid://b21u03hfxyj3v" path="res://SpriteFrame/squadleader_spriteframe.tres" id="2_ua85a"]
 [ext_resource type="Script" path="res://pickup_effect.gd" id="4_udr5o"]
+[ext_resource type="Script" path="res://upgrade_bundle.gd" id="7_oc53g"]
 
 [resource]
 script = ExtResource("1_vjj8x")
@@ -20,5 +21,6 @@ hitbox_size = Vector2(13, 7)
 display_mode = 0
 sprite_frame = ExtResource("2_ua85a")
 item_list = Array[ExtResource("1_4ff8d")]([ExtResource("1_a0h6p"), ExtResource("2_hlxqh")])
+available_upgrade_bundle = Array[ExtResource("7_oc53g")]([])
 is_pickup = false
 pickup_effect_list = Array[ExtResource("4_udr5o")]([])

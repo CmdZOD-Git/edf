@@ -19,7 +19,11 @@ func _ready() -> void:
 	
 	projectile_hit.connect(on_hit)
 	actor_radio.connect(on_radio)
-	
+
+	# Register Player in Global if first player
+	if actor_stat.is_player == true:
+		Global.player = self
+
 	# Camera
 	if actor_stat.is_player == true:
 		var camera = Camera2D.new()
@@ -147,3 +151,30 @@ func picked_up(picker:Actor) -> void:
 	tween.tween_property(self, "scale", Vector2( 1.5 , 1.5 ), 1)
 	tween.set_parallel(false)
 	tween.tween_callback(queue_free)
+
+func gather_upgrade()-> Array[UpgradeBundle]:
+	var bundle_list:Array[UpgradeBundle] = []
+	for upgrade:UpgradeBundle in actor_stat.available_upgrade_bundle:
+		upgrade.holder = self
+		bundle_list.append(upgrade)
+	
+	for item:Item in item_manager.get_children():
+		if not item.has_method("gather_upgrade"):
+			continue
+		else:
+			bundle_list.append_array(item.gather_upgrade())
+	
+	return bundle_list
+	
+func picked_upgrade(picked_upgrade_bundle:UpgradeBundle) -> void:
+	for effect:UpgradeEffect in picked_upgrade_bundle.upgrade_list:
+		if effect.target == UpgradeEffect.Target.Actor:
+			actor_stat.selected_upgrade_effect.append(effect.duplicate())
+		else:
+			print("don't know where to apply effect")
+	
+	if picked_upgrade_bundle.holder == self:
+		actor_stat.selected_upgrade_bundle.append(picked_upgrade_bundle.duplicate())
+		actor_stat.available_upgrade_bundle.erase(picked_upgrade_bundle)
+	else:
+		print("don't know where to remove upgrade")

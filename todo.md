@@ -1,6 +1,5 @@
 # Now
-Still need a method to select UpgradeBundle available
-Apply effect of the pickup
+Apply effect on fire and/or pickup
 player death + health bar (beginning of an UI ?)
 XP and level up ?
 
@@ -13,6 +12,7 @@ XP and level up ?
 # Idea
 
 # DONE (in reverse)
+First implementation to gather Upgrade list and store selected upgrade bundle & effect
 Moving closer to the real thing → upgrade framework (as a pickup for now)
 Learned how to call a specific event through another action
 Spawner framework 

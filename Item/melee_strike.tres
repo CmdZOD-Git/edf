@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://miwvysulv1ah"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=5 format=3 uid="uid://miwvysulv1ah"]
 
 [ext_resource type="Script" path="res://item_resource.gd" id="1_m7uvj"]
+[ext_resource type="Script" path="res://upgrade_bundle.gd" id="1_wg0bp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ad27d"]
 load_path = "res://.godot/imported/bullets&plasma.png-16984755a953f412ed7cbf99f3165bf7.ctex"
@@ -31,3 +32,4 @@ spawn_personal_limit = 0
 impact = 1
 impact_random = true
 impact_random_framecount = 1
+available_upgrade = Array[ExtResource("1_wg0bp")]([])

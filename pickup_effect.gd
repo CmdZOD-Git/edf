@@ -30,6 +30,9 @@ func picked_up(picker:Actor) -> void :
 		
 	elif type == Type.TRIGGER:
 		var test_list:Array[UpgradeBundle]
-		test_list.append(load("res://UpgradeBundle/damage_up_1.tres").duplicate())
-		test_list.append(load("res://UpgradeBundle/damage_up_2.tres").duplicate())
-		Global.call_upgrade_panel.emit(load("res://actor_template.tscn").instantiate(), test_list)
+		test_list.append_array(Global.player.gather_upgrade())
+		#test_list.append(load("res://UpgradeBundle/damage_up_1.tres").duplicate())
+		if test_list.size() > 0:
+			Global.call_upgrade_panel.emit(Global.player, test_list)
+		else:
+			picker.text_toast("No upgrade left !")
